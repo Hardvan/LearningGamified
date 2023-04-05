@@ -56,7 +56,8 @@ header {
 
 #text {
   position: absolute;
-  font-size: 5em;
+  font-size: 7em;
+  font-weight: 700;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
