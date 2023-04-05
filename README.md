@@ -1,12 +1,8 @@
 # Education Hacks 2023
 
-## Team Name
+## Team Name: BitSquared
 
-BitSquared
-
-## Topic Name
-
-LearningGamified
+## Topic Name: LearningGamified
 
 ## Central Website Themes
 
