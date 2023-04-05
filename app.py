@@ -6,11 +6,13 @@ import MorseFunctions
 app = Flask(__name__)
 
 
+# ? Home Page
 @app.route('/')
 def home():
     return render_template('home.html')
 
 
+# ? Encryption Page
 @app.route('/encryption')
 def encryption():
 
