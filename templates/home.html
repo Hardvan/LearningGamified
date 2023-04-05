@@ -31,9 +31,13 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/home.css') }}"
     />
+
+    <!-- ScrollRevealJS-->
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
 
   <body>
+    <!-- Navbar -->
     <header>
       <a href="/" style="text-decoration: none"
         ><h2 class="logo">Learning Gamified</h2></a
@@ -45,6 +49,7 @@
       </nav>
     </header>
 
+    <!-- Parallax -->
     <section class="parallax">
       <img
         src="{{url_for('static', filename='images/Home/hill1.png')}}"
@@ -88,7 +93,9 @@
         alt="plant"
       />
     </section>
+    <!-- End of Parallax-->
 
+    <!-- About Us -->
     <section class="sec">
       <h2>Learning Gamified</h2>
       <p>
@@ -110,6 +117,61 @@
         <br />
       </p>
     </section>
+    <!-- End of About Us -->
+
+    <!--ScrollReveal JS-->
+    <section class="sec-01 Section">
+      <div class="container">
+        <h2 class="main-title">Themes</h2>
+        <div class="content">
+          <div class="image">
+            <img
+              src="{{url_for('static', filename='images/Home/img1.jpg')}}"
+              alt="img1"
+            />
+          </div>
+          <div class="text-box">
+            <h3>For School</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+              exercitationem dolor deserunt consectetur esse tenetur ex maxime
+              at alias explicabo inventore itaque nam, commodi dolorum quam
+              ratione quibusdam voluptate labore?
+            </p>
+          </div>
+        </div>
+        <div class="media-icons">
+          <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-02 Section">
+      <div class="container">
+        <h3 class="section-title">For College</h3>
+        <div class="content">
+          <div class="image">
+            <img
+              src="{{url_for('static', filename='images/Home/img2.jpg')}}"
+              alt="img2"
+            />
+          </div>
+          <div class="info">
+            <h4 class="info-title">Description</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              quibusdam corporis accusamus aspernatur aut voluptatum earum, qui
+              hic doloribus facilis libero eum sit, soluta autem obcaecati
+              perferendis, culpa a deserunt!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of ScrollReveal JS -->
 
     <!-- Custom JS -->
     <script
