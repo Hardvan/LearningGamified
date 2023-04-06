@@ -240,6 +240,16 @@ header {
   border-radius: 10px;
 }
 
+.cards a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.cards h3 {
+  padding-top: 20px;
+  font-weight: 600;
+}
+
 .card img {
   width: 100%;
   height: 100%;
