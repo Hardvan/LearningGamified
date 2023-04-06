@@ -38,7 +38,7 @@ ScrollReveal().reveal(".text-box", {
   delay: 350,
   origin: "right",
 });
-ScrollReveal().reveal(".media-icons i", {
+ScrollReveal().reveal(".media-icons i, .cards .card", {
   delay: 250,
   origin: "bottom",
   interval: 100,
