@@ -9,7 +9,16 @@ app = Flask(__name__)
 # ? Home Page
 @app.route('/')
 def home():
+
     return render_template('home.html')
+
+# ? Kids Games
+
+
+@app.route('/simon')
+def simon():
+
+    return render_template('simon.html')
 
 
 # ? Encryption Page
