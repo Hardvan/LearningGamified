@@ -15,10 +15,18 @@ def home():
 # ? Kids Games
 
 
+# Simon Game
 @app.route('/simon')
 def simon():
 
     return render_template('simon.html')
+
+
+# Card Game
+@app.route('/cardgame')
+def cardgame():
+
+    return render_template('cardgame.html')
 
 
 # ? Encryption Page
