@@ -29,6 +29,13 @@ def cardgame():
     return render_template('cardgame.html')
 
 
+# Math Game
+@app.route('/mathgame')
+def mathgame():
+
+    return render_template('mathgame.html')
+
+
 # ? Encryption Page
 @app.route('/encryption')
 def encryption():
