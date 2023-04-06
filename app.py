@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 # Custom modules
 import MorseFunctions
+import RSA
 
 app = Flask(__name__)
 
@@ -43,6 +44,7 @@ def encryption():
     return render_template('encryption.html')
 
 
+# Morse Code
 @app.route('/encryption/morse', methods=['GET', 'POST'])
 def morse():
 
@@ -64,6 +66,29 @@ def morse():
         return render_template('morse.html', result=result)
 
     return render_template('morse.html', result=None)
+
+
+# RSA
+@app.route('/encryption/rsa', methods=['GET', 'POST'])
+def rsa():
+
+    if request.method == 'POST':
+        originaltext = request.form.get('originaltext', None)
+
+        result = {}
+        result["originaltext"] = originaltext
+
+        ciphertext, plaintext, public_key, private_key = RSA.getEncryptedAndDecryptedMessage(
+            originaltext)
+
+        result["ciphertext"] = ciphertext
+        result["deciphertext"] = plaintext
+        result["public_key"] = public_key
+        result["private_key"] = private_key
+
+        return render_template('rsa.html', result=result)
+
+    return render_template('rsa.html')
 
 
 if __name__ == "__main__":
