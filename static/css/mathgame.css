@@ -160,6 +160,34 @@ h1 {
   display: none;
 }
 
+.mydiv {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Go Back Button: Green */
+.GoBack {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.GoBack:hover {
+  background-color: #3e8e41;
+}
+
 @media (max-width: 570px) {
   #container {
     width: 440px;
