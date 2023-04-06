@@ -40,4 +40,4 @@ Contain interactive games, quizzes
 3. Make changes in your local machine
 4. Commit & Push the changes to your forked repo
 5. Go to your forked repo
-6. Create a Pull Request
+6. Create a Pull Request ('Contribute' button)
