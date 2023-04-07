@@ -1,4 +1,9 @@
 from flask import Flask, render_template, request
+import os
+from werkzeug.utils import secure_filename
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
+import numpy as np
 
 # Custom modules
 import MorseFunctions
@@ -89,6 +94,58 @@ def rsa():
         return render_template('rsa.html', result=result)
 
     return render_template('rsa.html')
+
+
+# ML Model
+model = load_model('wild_cats_classification_model.h5')
+
+
+def allowed_file(filename):
+    """
+    Check if the uploaded file has an allowed extension.
+    """
+    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+@app.route('/mlmodel', methods=['GET', 'POST'])
+def mlmodel():
+    # Set the default prediction value to None
+    prediction = None
+
+    if request.method == 'POST':
+
+        # Get the uploaded file
+        f = request.files['fileUpload']
+
+        # If the file exists and is allowed, save it and make a prediction
+        if f and allowed_file(f.filename):
+            filename = secure_filename(f.filename)
+            file_path = os.path.join('static/uploads', filename)
+            f.save(file_path)
+
+            # Load the image and preprocess it for the model
+            img = image.load_img(file_path, target_size=(224, 224))
+            x = image.img_to_array(img)
+            x = np.expand_dims(x, axis=0)
+            x = x/255.0
+
+            # Make a prediction using the loaded model
+            pred = model.predict(x)
+            pred = np.argmax(pred, axis=1)
+            labels = {0: 'AFRICAN LEOPARD', 1: 'CARACAL', 2: 'CHEETAH', 3: 'CLOUDED LEOPARD',
+                      4: 'JAGUAR', 5: 'LIONS', 6: 'OCELOT', 7: 'PUMA', 8: 'SNOW LEOPARD', 9: 'TIGER'}
+
+            classification = labels[pred[0]]
+            # print(classification)
+
+            # Set the prediction value to be displayed in the HTML template
+            prediction = {'filename': filename,
+                          'classification': classification}
+
+    return render_template('mlmodel.html', prediction=prediction)
 
 
 if __name__ == "__main__":
