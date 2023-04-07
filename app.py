@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-import os
 import numpy as np
 from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
@@ -99,9 +98,6 @@ def rsa():
 
 
 # ML Model
-model = load_model('static/model/wild_cats_classification_model.h5')
-
-
 def allowed_file(filename):
     """
     Check if the uploaded file has an allowed extension.
@@ -114,6 +110,10 @@ def allowed_file(filename):
 
 @app.route('/mlmodel', methods=['GET', 'POST'])
 def mlmodel():
+
+    # Load the model
+    model = load_model('static/model/wild_cats_classification_model.h5')
+
     # Set the default prediction value to None
     prediction = None
 
