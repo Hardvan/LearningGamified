@@ -39,7 +39,7 @@
 
 /* Button text */
 .form-control[type="file"]::-webkit-file-upload-button {
-  background: #007bff;
+  background: #e14778;
   border-radius: 20px;
   padding: 10px 20px;
   color: #fff;
