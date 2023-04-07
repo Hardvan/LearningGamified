@@ -10,8 +10,6 @@ let interval;
 let firstCard = false;
 let secondCard = false;
 let mySound1 = new Audio('Theme.wav')
-let mySound2 = new Audio('test.wav')
-
 //Items array
 const items = [
   { name: "goofy", image: "images/goofy.png" },
@@ -126,8 +124,9 @@ const matrixGenerator = (cardValues, size = 4) => {
             winCount += 1;
             //check if winCount ==half of cardValues
             if (winCount == Math.floor(cardValues.length / 2)) {
-            mySound1.pause()
-            mySound2.play()
+              mySound1.pause()
+              let mySound2=new Audio('test.wav')
+              mySound2.play()
               result.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${movesCount}</h4>`;
               stopGame();
@@ -141,7 +140,7 @@ const matrixGenerator = (cardValues, size = 4) => {
             let delay = setTimeout(() => {
               tempFirst.classList.remove("flipped");
               tempSecond.classList.remove("flipped");
-            }, 900);
+            }, 450);
           }
         }
       }
@@ -171,7 +170,6 @@ stopButton.addEventListener(
   "click",
   (stopGame = () => {
     mySound1.pause()
-    mySound2.pause()
     controls.classList.remove("hide");
     stopButton.classList.add("hide");
     startButton.classList.remove("hide");
