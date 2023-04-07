@@ -59,14 +59,19 @@
             <button type="submit" class="btn btn-primary">Predict</button>
           </form>
           {% if prediction %}
-          <div class="mt-5">
+          <div class="mt-5 text-center">
             <h2>Prediction:</h2>
             <img
               src="data:image/jpeg;base64,{{ prediction.image }}"
               class="img-thumbnail"
               alt="Prediction"
             />
-            <p>{{ prediction.classification }}</p>
+            <p class="text-center">
+              The prediction is:
+              <span class="prediction-text"
+                >{{ prediction.classification }}</span
+              >
+            </p>
             <div class="form-group mb-4">
               <label for="accuracy" class="form-label"
                 >Was the prediction accurate?</label

@@ -135,7 +135,7 @@ def mlmodel():
             pred = model.predict(x)
             pred = np.argmax(pred, axis=1)
             labels = {0: 'AFRICAN LEOPARD', 1: 'CARACAL', 2: 'CHEETAH', 3: 'CLOUDED LEOPARD',
-                      4: 'JAGUAR', 5: 'LIONS', 6: 'OCELOT', 7: 'PUMA', 8: 'SNOW LEOPARD', 9: 'TIGER'}
+                      4: 'JAGUAR', 5: 'LION', 6: 'OCELOT', 7: 'PUMA', 8: 'SNOW LEOPARD', 9: 'TIGER'}
 
             classification = labels[pred[0]]
             # print(classification)
