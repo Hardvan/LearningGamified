@@ -76,6 +76,12 @@ h1 {
   background: #0069d9;
 }
 
+.PredictButton {
+  /* Center */
+  display: flex;
+  margin: 0 auto;
+}
+
 /* Result Styles */
 .mt-5 {
   margin-top: 2rem;
