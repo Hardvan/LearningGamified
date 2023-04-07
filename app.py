@@ -97,7 +97,7 @@ def rsa():
 
 
 # ML Model
-model = load_model('wild_cats_classification_model.h5')
+model = load_model('static/model/wild_cats_classification_model.h5')
 
 
 def allowed_file(filename):
@@ -122,7 +122,7 @@ def mlmodel():
 
         # If the file exists and is allowed, save it and make a prediction
         if f and allowed_file(f.filename):
-            filename = secure_filename(f.filename)
+            filename = secure_filename('wild_cat_image.jpg')
             file_path = os.path.join('static/uploads', filename)
             f.save(file_path)
 
