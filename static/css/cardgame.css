@@ -99,6 +99,11 @@ button {
 }
 #result {
   text-align: center;
+  width: 30%;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  font-family: "Sacramento", cursive;
 }
 #result h2 {
   font-size: 2.5em;

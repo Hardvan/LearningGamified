@@ -2,7 +2,7 @@ const moves = document.getElementById("moves-count");
 const timeValue = document.getElementById("time");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
-const goBackButton = document.getElementById("GoBack")
+const goBackButton = document.getElementById("GoBack");
 const gameContainer = document.querySelector(".game-container");
 const result = document.getElementById("result");
 const controls = document.querySelector(".controls-container");
@@ -10,6 +10,7 @@ let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
+let mySound1 = new Audio("static/sounds/Theme.wav");
 
 //Items array
 const items = [
@@ -122,16 +123,15 @@ const matrixGenerator = (cardValues, size = 4) => {
             //if both cards match add matched class so these cards would beignored next time
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
-            let mySound = new Audio("static/sounds/clap.wav");
-            mySound.play();
             //set firstCard to false since next card would be first now
             firstCard = false;
             //winCount increment as user found a correct match
             winCount += 1;
             //check if winCount ==half of cardValues
             if (winCount == Math.floor(cardValues.length / 2)) {
-              let mySound = new Audio("static/sounds/test.wav");
-              mySound.play();
+              mySound1.pause();
+              let mySound2 = new Audio("static/sounds/test.wav");
+              mySound2.play();
               result.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${movesCount}</h4>`;
               stopGame();
@@ -145,7 +145,7 @@ const matrixGenerator = (cardValues, size = 4) => {
             let delay = setTimeout(() => {
               tempFirst.classList.remove("flipped");
               tempSecond.classList.remove("flipped");
-            }, 900);
+            }, 450);
           }
         }
       }
@@ -155,6 +155,7 @@ const matrixGenerator = (cardValues, size = 4) => {
 
 //Start game
 startButton.addEventListener("click", () => {
+  mySound1.play();
   movesCount = 0;
   seconds = 0;
   minutes = 0;
@@ -174,6 +175,7 @@ startButton.addEventListener("click", () => {
 stopButton.addEventListener(
   "click",
   (stopGame = () => {
+    mySound1.pause();
     controls.classList.remove("hide");
     stopButton.classList.add("hide");
     startButton.classList.remove("hide");
