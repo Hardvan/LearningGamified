@@ -66,11 +66,36 @@
               class="img-thumbnail"
             />
             <p>{{ prediction.classification }}</p>
+            <div class="form-group mb-4">
+              <label for="accuracy" class="form-label"
+                >Was the prediction accurate?</label
+              >
+              <div>
+                <button type="button" class="btn btn-success" id="yesBtn">
+                  Yes
+                </button>
+                <button type="button" class="btn btn-danger" id="noBtn">
+                  No
+                </button>
+              </div>
+              <div id="result"></div>
+            </div>
           </div>
           {% endif %}
         </div>
       </div>
     </div>
+
+    <script>
+      document.getElementById("yesBtn").addEventListener("click", function () {
+        document.getElementById("result").innerHTML = "An accurate model";
+      });
+
+      document.getElementById("noBtn").addEventListener("click", function () {
+        document.getElementById("result").innerHTML =
+          "Models make mistake sometimes";
+      });
+    </script>
 
     <!-- Bootstrap JS (to be added before other JS links) -->
     <!-- JavaScript Bundle with Popper -->
