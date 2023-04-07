@@ -62,8 +62,9 @@
           <div class="mt-5">
             <h2>Prediction:</h2>
             <img
-              src="{{ url_for('static', filename='uploads/' + prediction.filename) }}"
+              src="data:image/jpeg;base64,{{ prediction.image }}"
               class="img-thumbnail"
+              alt="Prediction"
             />
             <p>{{ prediction.classification }}</p>
             <div class="form-group mb-4">
@@ -81,7 +82,7 @@
               <div id="result"></div>
               <button
                 type="button"
-                class="btn btn-primary mt-3"``
+                class="btn btn-primary mt-3"
                 onclick="goToHome()"
               >
                 Go Back

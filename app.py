@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 import os
+import numpy as np
 from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-import numpy as np
+import base64
+import io
 
 # Custom modules
 import MorseFunctions
@@ -120,14 +122,11 @@ def mlmodel():
         # Get the uploaded file
         f = request.files['fileUpload']
 
-        # If the file exists and is allowed, save it and make a prediction
+        # If the file exists and is allowed, make a prediction
         if f and allowed_file(f.filename):
-            filename = secure_filename('wild_cat_image.jpg')
-            file_path = os.path.join('static/uploads', filename)
-            f.save(file_path)
 
             # Load the image and preprocess it for the model
-            img = image.load_img(file_path, target_size=(224, 224))
+            img = image.load_img(io.BytesIO(f.read()), target_size=(224, 224))
             x = image.img_to_array(img)
             x = np.expand_dims(x, axis=0)
             x = x/255.0
@@ -141,8 +140,13 @@ def mlmodel():
             classification = labels[pred[0]]
             # print(classification)
 
+            # Read the image file and convert it to base64 encoding
+            f.seek(0)
+            image_file = f.read()
+            image_base64 = base64.b64encode(image_file).decode('utf-8')
+
             # Set the prediction value to be displayed in the HTML template
-            prediction = {'filename': filename,
+            prediction = {'image': image_base64,
                           'classification': classification}
 
     return render_template('mlmodel.html', prediction=prediction)
