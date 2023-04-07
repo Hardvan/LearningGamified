@@ -9,6 +9,8 @@ let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
+let mySound1 = new Audio('Theme.wav')
+let mySound2 = new Audio('test.wav')
 
 //Items array
 const items = [
@@ -118,16 +120,14 @@ const matrixGenerator = (cardValues, size = 4) => {
             //if both cards match add matched class so these cards would beignored next time
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
-            let mySound = new Audio('clap.wav')
-            mySound.play()
             //set firstCard to false since next card would be first now
             firstCard = false;
             //winCount increment as user found a correct match
             winCount += 1;
             //check if winCount ==half of cardValues
-            if (winCount == Math.floor(cardValues.length / 2)) {             
-            let mySound = new Audio('test.wav')
-            mySound.play()
+            if (winCount == Math.floor(cardValues.length / 2)) {
+            mySound1.pause()
+            mySound2.play()
               result.innerHTML = `<h2>You Won</h2>
             <h4>Moves: ${movesCount}</h4>`;
               stopGame();
@@ -150,7 +150,8 @@ const matrixGenerator = (cardValues, size = 4) => {
 };
 
 //Start game
-startButton.addEventListener("click", () => {
+startButton.addEventListener("click", () => {  
+  mySound1.play()
   movesCount = 0;
   seconds = 0;
   minutes = 0;
@@ -169,6 +170,8 @@ startButton.addEventListener("click", () => {
 stopButton.addEventListener(
   "click",
   (stopGame = () => {
+    mySound1.pause()
+    mySound2.pause()
     controls.classList.remove("hide");
     stopButton.classList.add("hide");
     startButton.classList.remove("hide");
