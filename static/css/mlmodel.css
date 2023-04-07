@@ -32,7 +32,7 @@ h1 {
 .ModelSection {
   color: #fff;
   padding: 2rem 0;
-  margin-bottom: 400px;
+  margin-bottom: 200px;
 }
 
 /* Form Styles */
@@ -99,7 +99,7 @@ h2 {
   font-size: 1.5rem;
   margin-top: 10px;
   text-align: center;
-  color: green;
+  color: #20dd33;
   font-weight: 700;
 }
 
