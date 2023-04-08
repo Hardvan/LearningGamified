@@ -30,4 +30,4 @@ The Simon game is a memory game where the player must repeat a pattern of colore
 ### College
 
 In the college section, we offer more advanced things like RSA encryption, Morse code encryption and machine learning. These games are aimed at college students who want to learn and improve their technical skills.
-Encryption is a section that teaches students how to encrypt and decrypt messages using the RSA and the Morse code algorithm. Machine learning involve training algorithms to recognize patterns and make predictions based on data.
+Encryption is a section that teaches students how to encrypt and decrypt messages using the RSA and the Morse code algorithm. Machine learning involve training algorithms to recognize patterns and make predictions based on data. We use our custom-trained ML Image Classification Model to predict the name of a wild cat based on an image of the cat. The model is trained on a dataset of 10 different wild cat species. The model is integrated into the website and the user can upload an image of a wild cat and get the name of the cat as the output.
