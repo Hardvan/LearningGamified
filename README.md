@@ -6,6 +6,10 @@
 
 ## [Link to the website](http://learninggamified.pythonanywhere.com/)
 
+## [YouTube Demonstration Video](https://youtu.be/amiDuvHZP68)
+
+## [Devpost Submission](https://devpost.com/software/learning-gamified)
+
 ## What we offer
 
 Welcome to our website, Learning Gamified where we offer interactive games for students of all ages. Our website is divided into two sections : one for school children and another for college students. Our games are interactive and designed to make learning fun and engaging. They are accessible to students of all levels, from beginners to advanced learners. Our website is user-friendly and also very easy to navigate, making it easy for students to find the games they need to enhance their learning experience.
