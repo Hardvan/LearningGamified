@@ -43,16 +43,17 @@
   </head>
 
   <body>
-    <h1 class="text-center">Machine Learning</h1>
-    <p class="text-center">
-      <em style="color: white; font-size: larger"
-        >This page on Machine Learning provides an overview of it's important
-        definitions and an example of what you can do with it. Happy
-        learning!</em
-      >
-    </p>
+    <h1 class="text-center mb-5">Machine Learning</h1>
+    <div class="container text-center">
+      <p class="fs-5 text-white rounded-3 py-3 px-4 mb-5">
+        <em>
+          This page on Machine Learning provides an overview of its important
+          definitions and an example of what you can do with it. Happy learning!
+        </em>
+      </p>
+    </div>
     <div class="content">
-      <h3>What is Machine Learning?</h3>
+      <h3 class="mt-5">What is Machine Learning?</h3>
       <p>
         Machine Learning is a branch of Artificial Intelligence which focuses on
         the use of data and algorithms to imitate the way humans learn. Machine
@@ -69,24 +70,24 @@
       </p>
       <p></p>
 
-      <h3>How a Machine Learning algorithm works</h3>
+      <h3 class="mt-5">How a Machine Learning algorithm works</h3>
       <p>
         The learning system of an ML algorithm can be broken down into three
         parts:
       </p>
       <ol>
-        <li>
+        <li class="mt-3">
           <b>The Decision Process</b>: The algorithm is used to make a
           prediction or a classification. So based on some input data, which can
           either be labeled or unlabeled, the algorithm produces an estimate
           about a pattern in the data.
         </li>
-        <li>
+        <li class="mt-3">
           <b>Error Function</b>: An error function evaluates the prediction of
           the model. If there are known examples, an error function can make a
           comparison to assess the accuracy of the model.
         </li>
-        <li>
+        <li class="mt-3">
           <b>Model Optimization</b>: If the model can fit better to the data
           points in the training set, then weights are adjusted to reduce the
           discrepancy between the known example and the model estimate. The
@@ -95,25 +96,25 @@
         </li>
       </ol>
 
-      <h3>What can you do with Machine Learning?</h3>
+      <h3 class="mt-5">What can you do with Machine Learning?</h3>
       <p>
         Here is an ML model that is built for <b>Wild Cats Prediction</b>. It
         takes the image of any wild cat like a lion, cheetah, snow leopard etc.
         as the input and gives the name of the animal.
       </p>
-      <h4>How the ML model works</h4>
+      <h4 class="mt-5">How the ML model works</h4>
       <p>
         The Python language is used to write the code for the model, so
         knowledge of it is a must. There are a number of steps that are involved
         in building such a machine learning model, some of them are:
       </p>
       <ol>
-        <li><h4>Importing the required libraries</h4></li>
+        <li class="mt-3"><h4>Importing the required libraries</h4></li>
         <p>
           First step is to import the libraries needed, like the Data Science,
           Visualization, Tensorflow and a few other libraries.
         </p>
-        <li><h4>Visualizing the images from the dataset</h4></li>
+        <li class="mt-3"><h4>Visualizing the images from the dataset</h4></li>
         <p>
           Various wild cat images have been used to train the model, like the
           images of a lion, clouded leopard, cheetah, caracal, jaguar etc.
@@ -125,7 +126,7 @@
             width="500"
           />
         </div>
-        <li><h4>Training the model</h4></li>
+        <li class="mt-3"><h4>Training the model</h4></li>
         <p>
           The images are loaded and are run with the created model. An
           <em>epoch</em> is when all the training data is used at once and is
@@ -133,7 +134,7 @@
           one cycle for training the machine learning model. More epochs can
           lead to better accuracy.
         </p>
-        <li><h4>Model Evaluation</h4></li>
+        <li class="mt-3"><h4>Model Evaluation</h4></li>
         <p>
           Once an image is given as input and is run, the
           <em>Test Accuracy</em> is returned as a percentage value. This enables

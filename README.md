@@ -31,12 +31,3 @@ The Simon game is a memory game where the player must repeat a pattern of colore
 
 In the college section, we offer more advanced things like RSA encryption, Morse code encryption and machine learning. These games are aimed at college students who want to learn and improve their technical skills.
 Encryption is a section that teaches students how to encrypt and decrypt messages using the RSA and the Morse code algorithm. Machine learning involve training algorithms to recognize patterns and make predictions based on data.
-
-## How to create a Pull Request
-
-1. Fork the repo (Click on the `Fork` button on the top right corner of the repo)
-2. Clone the repo in your local machine using `git clone <repo link>`
-3. Make changes in your local machine
-4. Commit & Push the changes to your forked repo
-5. Go to your forked repo
-6. Create a Pull Request (`Contribute` button)
