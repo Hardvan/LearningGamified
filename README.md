@@ -4,7 +4,10 @@
 
 ## Hackathon: EducateHacks 2023
 
-## [Link to the website](http://learninggamified.pythonanywhere.com/)
+## Link to the website
+
+- On [Render](https://learning-gamified.onrender.com/)
+- On [PythonAnywhere](http://learninggamified.pythonanywhere.com/)
 
 ## [YouTube Demonstration Video](https://youtu.be/amiDuvHZP68)
 
